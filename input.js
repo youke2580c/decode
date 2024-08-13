@@ -1,11 +1,3 @@
-/*function sign(param) {
-    return sign_sha1('' + sign_sha1(param));
-}*/
-/*
- * 加密工具已经升级了一个版本，目前为 jsjiami.com.v7 ，更新了加密算法，缩减了体积;
- * 另外 jsjiami.com.v7 已经强制加入校验，注释可以去掉，但是 jsjiami.com.v7 不能去掉，其他都没有任何绑定。
- * 誓死不会加入任何后门，JsJiami.com 加密的使命就是为了保护你们的Javascript 。
- */
 var _0xodY = 'jsjiami.com.v7';
 var _0x13b034 = _0x48ef;
 (function(_0x4573b8, _0x4f7a0b, _0x5445b3, _0x54c85a, _0x1e730b, _0x5c042b, _0x1ebda1) {
