@@ -1,4 +1,4 @@
-//8/13/2024, 3:53:40 PM
+//8/13/2024, 3:55:31 PM
 //Project:https://github.com/dream385/decode
 (function () {})();
 function sign(_0x52585f) {
