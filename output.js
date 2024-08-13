@@ -1,7 +1,6 @@
-//7/20/2024, 3:20:44 PM
+//8/13/2024, 3:53:40 PM
 //Project:https://github.com/dream385/decode
-function test() {
-  return console.log("test");
+(function () {})();
+function sign(_0x52585f) {
+  return sign_sha1("musicAPI_0324df2f4930180353ad8832f4dcc876" + sign_sha1(_0x52585f));
 }
-test();
-_0xodN = "jsjiami.com.v6";
