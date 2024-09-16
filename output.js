@@ -1,4 +1,4 @@
-//9/16/2024, 8:57:00 PM
+//9/16/2024, 9:00:10 PM
 //Project:https://github.com/dream385/decode
 $(function () {
   function _0x1c72dc(_0x2ba890) {
