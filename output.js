@@ -1,61 +1,47 @@
-//9/16/2024, 9:00:10 PM
+//9/23/2024, 1:02:36 PM
 //Project:https://github.com/dream385/decode
-$(function () {
-  function _0x1c72dc(_0x2ba890) {
-    var _0xf79727 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-    var _0xdd54cd,
-      _0x4356aa,
-      _0x3c6736,
-      _0x444c73,
-      _0x5799af,
-      _0x582152,
-      _0x420099,
-      _0xe80067,
-      _0x51d7ca = 0,
-      _0x367e8d = 0,
-      _0xc87c7 = "",
-      _0x250acf = [];
-    if (!_0x2ba890) {
-      return _0x2ba890;
-    }
-    _0x2ba890 += "";
-    do {
-      _0x444c73 = _0xf79727.indexOf(_0x2ba890.charAt(_0x51d7ca++));
-      _0x5799af = _0xf79727.indexOf(_0x2ba890.charAt(_0x51d7ca++));
-      _0x582152 = _0xf79727.indexOf(_0x2ba890.charAt(_0x51d7ca++));
-      _0x420099 = _0xf79727.indexOf(_0x2ba890.charAt(_0x51d7ca++));
-      _0xe80067 = _0x444c73 << 18 | _0x5799af << 12 | _0x582152 << 6 | _0x420099;
-      _0xdd54cd = _0xe80067 >> 16 & 255;
-      _0x4356aa = _0xe80067 >> 8 & 255;
-      _0x3c6736 = _0xe80067 & 255;
-      if (_0x582152 == 64) {
-        _0x250acf[_0x367e8d++] = String.fromCharCode(_0xdd54cd);
-      } else if (_0x420099 == 64) {
-        _0x250acf[_0x367e8d++] = String.fromCharCode(_0xdd54cd, _0x4356aa);
+function _0x4e7247(_0x16feef) {
+  var _0x48afc1, _0x553b73, _0x47b1a2, _0x3f5e0e, _0x3bb012, _0x988d7;
+  _0x48afc1 = "";
+  _0x47b1a2 = _0x16feef.length;
+  for (_0x553b73 = 0; _0x553b73 < _0x47b1a2; _0x553b73++) {
+    _0x3f5e0e = _0x16feef.charCodeAt(_0x553b73);
+    if (_0x3f5e0e <= 127) {
+      _0x48afc1 += String.fromCharCode(_0x3f5e0e);
+    } else {
+      _0x3bb012 = _0x16feef.charCodeAt(++_0x553b73);
+      if (_0x3f5e0e <= 223) {
+        _0x48afc1 += String.fromCharCode((_0x3f5e0e & 31) << 6 | _0x3bb012 & 63);
       } else {
-        _0x250acf[_0x367e8d++] = String.fromCharCode(_0xdd54cd, _0x4356aa, _0x3c6736);
+        _0x988d7 = _0x16feef.charCodeAt(++_0x553b73);
+        _0x48afc1 += String.fromCharCode((_0x3f5e0e & 15) << 12 | (_0x3bb012 & 63) << 6 | _0x988d7 & 63);
       }
-    } while (_0x51d7ca < _0x2ba890.length);
-    _0xc87c7 = _0x250acf.join("");
-    return _0xc87c7;
+    }
   }
-  var _0x4a0135 = $(".readerContainer").data("id");
-  var _0x3d1d18 = ["c21raHkyNTg=", "c21rZDk1ZnY=", "bWQ0OTY5NTI=", "Y2Rjc2R3cQ==", "dmJmc2EyNTY=", "Y2F3ZjE1MWM=", "Y2Q1NmN2ZGE=", "OGtpaG50OQ==", "ZHNvMTV0bG8=", "NWtvNnBsaHk="][_0x4a0135];
-  var _0x3af5f6 = _0x1c72dc(_0x3d1d18);
-  var _0x2155fc = _0x1c72dc(__c0rst96);
-  var _0x393370 = _0x3af5f6.length;
-  var _0x1e348e = "";
-  for (_0x45856e = 0; _0x45856e < _0x2155fc.length; _0x45856e++) {
-    k = _0x45856e % _0x393370;
-    _0x1e348e += String.fromCharCode(_0x2155fc.charCodeAt(_0x45856e) ^ _0x3af5f6.charCodeAt(k));
+  return _0x48afc1;
+}
+var _0x5c58a1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+function _0x5af2c7(_0x2d3757) {
+  var _0x1477fc, _0x2e99ec, _0x58d2f3, _0x329cc7, _0x558e58, _0x3e25ba, _0x10b7c6, _0x335925, _0x242a37, _0x12d2e3;
+  _0x1477fc = "";
+  _0x2e99ec = 0;
+  _0x58d2f3 = _0x2d3757.length;
+  while (_0x2e99ec < _0x58d2f3) {
+    _0x10b7c6 = _0x5c58a1.indexOf(_0x2d3757.charAt(_0x2e99ec++));
+    _0x335925 = _0x5c58a1.indexOf(_0x2d3757.charAt(_0x2e99ec++));
+    _0x242a37 = _0x5c58a1.indexOf(_0x2d3757.charAt(_0x2e99ec++));
+    _0x12d2e3 = _0x5c58a1.indexOf(_0x2d3757.charAt(_0x2e99ec++));
+    _0x329cc7 = _0x10b7c6 << 2 | _0x335925 >> 4;
+    _0x558e58 = (_0x335925 & 15) << 4 | _0x242a37 >> 2;
+    _0x3e25ba = (_0x242a37 & 3) << 6 | _0x12d2e3;
+    _0x1477fc += String.fromCharCode(_0x329cc7);
+    if (_0x242a37 !== 64) {
+      _0x1477fc += String.fromCharCode(_0x558e58);
+    }
+    if (_0x12d2e3 !== 64) {
+      _0x1477fc += String.fromCharCode(_0x3e25ba);
+    }
   }
-  var _0x2eb701 = _0x1c72dc(_0x1e348e);
-  var _0x409eb8 = JSON.parse(_0x2eb701);
-  var _0x542701 = _0x409eb8.length;
-  var _0x255baf = "";
-  for (var _0x45856e = 0; _0x45856e < _0x542701; _0x45856e++) {
-    _0x255baf = _0x255baf + "<div class=\"chapter-img-box\"><img data-src=\"" + _0x409eb8[_0x45856e] + "\" src=\"/static/images/load.gif\"></div>";
-  }
-  $(".main_img").append(_0x255baf);
-});
-_0xod6 = "jsjiami.com.v6";
+  return _0x4e7247(_0x1477fc);
+}
+document.getElementById("booktxt").innerHTML = _0x5af2c7(c.slice(Number(c.slice(4, 6)) + 6, c.length - Number(c.slice(4, 6))).replace(/_/g, "8L3A+").replace(/-/g, "PHA+"));
