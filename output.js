@@ -1,4 +1,4 @@
-//9/23/2024, 1:02:36 PM
+//10/27/2024, 4:44:33 PM
 //Project:https://github.com/dream385/decode
 function _0x4e7247(_0x16feef) {
   var _0x48afc1, _0x553b73, _0x47b1a2, _0x3f5e0e, _0x3bb012, _0x988d7;
