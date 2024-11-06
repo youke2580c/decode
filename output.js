@@ -1,4 +1,4 @@
-//11/6/2024, 5:29:51 PM
+//11/6/2024, 5:31:16 PM
 //Project:https://github.com/dream385/decode
 function a0_0xefb3(_0x4ef47c, _0x3e317f) {
   var _0x5d51ad = a0_0x12e4();
