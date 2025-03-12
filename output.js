@@ -1,57 +1,59 @@
-//2/5/2025, 1:36:27 PM
+//3/12/2025, 2:21:52 PM
 //Project:https://github.com/dream385/decode
-var _0x36922b = 992212,
-  _0x527228;
-if (_0x36922b = _0x36922b >> 12 ^ 213, _0x527228 = window.location && window.navigator.webdriver) {
-  var _0x4e6fde = 9;
-  for (_0x36922b = _0x36922b ^ _0x4e6fde; _0x4e6fde < _0x36922b | 9; _0x4e6fde > 0) {
-    _0x527228.href = _0x527228.href + "?" + _0x4e6fde;
+$(function () {
+  const _0x5069d4 = _0x4830;
+  function _0x253e() {
+    const _0x53b050 = ['data-xkrkllgl', 'data:image/', 'img[data-xuid=', '10345587knJDtu', 'then', '61604vDuSNP', 'data', 'split', 'xuid', '5199333NFunPu', 'img[data-xkrkllgl]', 'arraybuffer', 'pop', '33847168cwMjQt', 'src', '7059252mhYjFi', 'xkrkllgl', '418240kDfwJd', '1605765IZqtsf', '22MXKDTH', 'each'];
+    _0x253e = function () {
+      return _0x53b050;
+    };
+    return _0x253e();
   }
-}
-function _0x21c9a2(_0x133687) {
-  var _0x3d6c1d, _0x8b7d4, _0x7490fe, _0x4acb8b, _0xe22a38, _0x317959;
-  _0x3d6c1d = "";
-  _0x7490fe = _0x133687.length;
-  for (_0x8b7d4 = 0; _0x8b7d4 < _0x7490fe; _0x8b7d4++) {
-    _0x4acb8b = _0x133687.charCodeAt(_0x8b7d4);
-    _0x4acb8b <= 127 ? _0x3d6c1d += String.fromCharCode(_0x4acb8b) : (_0xe22a38 = _0x133687.charCodeAt(++_0x8b7d4), _0x4acb8b <= 223 ? _0x3d6c1d += String.fromCharCode((_0x4acb8b & 31) << 6 | _0xe22a38 & 63) : (_0x317959 = _0x133687.charCodeAt(++_0x8b7d4), _0x3d6c1d += String.fromCharCode((_0x4acb8b & 15) << 12 | (_0xe22a38 & 63) << 6 | _0x317959 & 63)));
+  function _0x4830(_0x53688d, _0x55007a) {
+    const _0x253ea2 = _0x253e();
+    _0x4830 = function (_0x483036, _0x53d6dd) {
+      _0x483036 = _0x483036 - 0x14d;
+      let _0x3d0e99 = _0x253ea2[_0x483036];
+      return _0x3d0e99;
+    };
+    return _0x4830(_0x53688d, _0x55007a);
   }
-  return _0x3d6c1d;
-}
-var _0x4bde5d = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-function _0x3a2f3e(_0x979eb8) {
-  var _0x109477, _0x5c9729, _0x388cce, _0x469549, _0xd7b96c, _0x4050b6, _0x1f2bfa, _0x264d1b, _0x10edd3, _0x4a38a7;
-  _0x109477 = "";
-  _0x5c9729 = 0;
-  _0x388cce = _0x979eb8.length;
-  while (_0x5c9729 < _0x388cce) {
-    _0x1f2bfa = _0x4bde5d.indexOf(_0x979eb8.charAt(_0x5c9729++));
-    _0x264d1b = _0x4bde5d.indexOf(_0x979eb8.charAt(_0x5c9729++));
-    _0x10edd3 = _0x4bde5d.indexOf(_0x979eb8.charAt(_0x5c9729++));
-    _0x4a38a7 = _0x4bde5d.indexOf(_0x979eb8.charAt(_0x5c9729++));
-    _0x469549 = _0x1f2bfa << 2 | _0x264d1b >> 4;
-    _0xd7b96c = (_0x264d1b & 15) << 4 | _0x10edd3 >> 2;
-    _0x4050b6 = (_0x10edd3 & 3) << 6 | _0x4a38a7;
-    _0x109477 += String.fromCharCode(_0x469549);
-    _0x10edd3 !== 64 && (_0x109477 += String.fromCharCode(_0xd7b96c));
-    _0x4a38a7 !== 64 && (_0x109477 += String.fromCharCode(_0x4050b6));
-  }
-  return _0x21c9a2(_0x109477);
-}
-function _0x4965db(_0x533d22, _0x39beeb) {
-  (function () {})();
-  var _0x39beeb = _0x3a2f3e(_0x39beeb);
-  document.getElementById(_0x533d22).innerHTML = _0x3a2f3e(_0x39beeb.slice(Number(_0x39beeb.slice(8, 11)) + 11, _0x39beeb.length - Number(_0x39beeb.slice(8, 11))).replace(/_/g, "8L3A+").replace(/-/g, "PHA+"));
-}
-function _0x37d075() {
-  var _0x2c1310 = /(android|iphone|ipad|ipod|mobile|windows phone|webos|blackberry|iemobile|mqqbrowser|midp|ucweb|webview|symbian|micromessenger|opera mini|phone|spider|harmonyos|xiaomi|vivo|htc|huawei|baiduboxapp|miuibrowser|opera mobi|wosbrowser)/i,
-    _0xef0d6c = navigator.userAgent.toLowerCase();
-  if (null == _0xef0d6c) {
-    return true;
-  }
-  var _0xf11acb = _0x2c1310.exec(_0xef0d6c);
-  if (null == _0xf11acb) {
-    return false;
-  } else return true;
-}
-_0x37d075() ? _0x4965db("morecontent", c) : document.getElementById("ct1").innerHTML = "<p>本站只支持手机浏览器访问，若您看到此段落，代表章节内容加载失败，请关闭浏览器的阅读模式、畅读模式、小说模式，以及关闭广告屏蔽功能，或复制网址到其他浏览器阅读！</p>";
+  (function (_0x197a8a, _0xdda120) {
+    const _0xa6f3f1 = _0x4830,
+      _0x25b9fa = _0x197a8a();
+    while (!![]) {
+      try {
+        const _0x3f9f52 = parseInt(_0xa6f3f1(0x157)) / 0x1 * (parseInt(_0xa6f3f1(0x150)) / 0x2) + -parseInt(_0xa6f3f1(0x15b)) / 0x3 + parseInt(_0xa6f3f1(0x14e)) / 0x4 + parseInt(_0xa6f3f1(0x14f)) / 0x5 + -parseInt(_0xa6f3f1(0x161)) / 0x6 + -parseInt(_0xa6f3f1(0x155)) / 0x7 + parseInt(_0xa6f3f1(0x15f)) / 0x8;
+        if (_0x3f9f52 === _0xdda120) {
+          break;
+        } else {
+          _0x25b9fa['push'](_0x25b9fa['shift']());
+        }
+      } catch (_0x347250) {
+        _0x25b9fa['push'](_0x25b9fa['shift']());
+      }
+    }
+  })(_0x253e, 0xe71e3);
+  $(_0x5069d4(0x15c))[_0x5069d4(0x151)](function (_0xeeffb, _0x29ca9d) {
+    const _0x140dd7 = _0x5069d4;
+    let _0x56f1c0 = $(_0x29ca9d),
+      _0x1075ac = _0x56f1c0[_0x140dd7(0x158)](_0x140dd7(0x14d)),
+      _0x188d8e = _0x56f1c0[_0x140dd7(0x158)](_0x140dd7(0x15a));
+    $['ajax'](_0x1075ac, {
+      'xhrFields': {
+        'responseType': _0x140dd7(0x15d)
+      }
+    })['then'](_0x1c81e5 => {
+      const _0x577cbe = _0x140dd7;
+      ab2b64(_0x1c81e5)[_0x577cbe(0x156)](_0xed486b => {
+        const _0x12cfc8 = _0x577cbe;
+        let _0xebf647 = _0x1075ac[_0x12cfc8(0x159)]('.'),
+          _0x37ee8d = _0xebf647[_0x12cfc8(0x15e)](),
+          _0x4427f0 = decryptImage(_0xed486b),
+          _0x25099b = _0x12cfc8(0x153) + _0x37ee8d + ';base64,' + _0x4427f0,
+          _0x4bcf67 = $(_0x12cfc8(0x154) + _0x188d8e + ']');
+        _0x4bcf67['attr'](_0x12cfc8(0x160), _0x25099b)['remove'](_0x12cfc8(0x152));
+      });
+    });
+  });
+});
