@@ -1,59 +1,231 @@
-//3/12/2025, 2:21:52 PM
+//4/13/2025, 4:18:20 PM
 //Project:https://github.com/dream385/decode
 $(function () {
-  const _0x5069d4 = _0x4830;
-  function _0x253e() {
-    const _0x53b050 = ['data-xkrkllgl', 'data:image/', 'img[data-xuid=', '10345587knJDtu', 'then', '61604vDuSNP', 'data', 'split', 'xuid', '5199333NFunPu', 'img[data-xkrkllgl]', 'arraybuffer', 'pop', '33847168cwMjQt', 'src', '7059252mhYjFi', 'xkrkllgl', '418240kDfwJd', '1605765IZqtsf', '22MXKDTH', 'each'];
-    _0x253e = function () {
-      return _0x53b050;
-    };
-    return _0x253e();
-  }
-  function _0x4830(_0x53688d, _0x55007a) {
-    const _0x253ea2 = _0x253e();
-    _0x4830 = function (_0x483036, _0x53d6dd) {
-      _0x483036 = _0x483036 - 0x14d;
-      let _0x3d0e99 = _0x253ea2[_0x483036];
-      return _0x3d0e99;
-    };
-    return _0x4830(_0x53688d, _0x55007a);
-  }
-  (function (_0x197a8a, _0xdda120) {
-    const _0xa6f3f1 = _0x4830,
-      _0x25b9fa = _0x197a8a();
-    while (!![]) {
-      try {
-        const _0x3f9f52 = parseInt(_0xa6f3f1(0x157)) / 0x1 * (parseInt(_0xa6f3f1(0x150)) / 0x2) + -parseInt(_0xa6f3f1(0x15b)) / 0x3 + parseInt(_0xa6f3f1(0x14e)) / 0x4 + parseInt(_0xa6f3f1(0x14f)) / 0x5 + -parseInt(_0xa6f3f1(0x161)) / 0x6 + -parseInt(_0xa6f3f1(0x155)) / 0x7 + parseInt(_0xa6f3f1(0x15f)) / 0x8;
-        if (_0x3f9f52 === _0xdda120) {
-          break;
-        } else {
-          _0x25b9fa['push'](_0x25b9fa['shift']());
-        }
-      } catch (_0x347250) {
-        _0x25b9fa['push'](_0x25b9fa['shift']());
+  $(".nav li").hover(function () {
+    $(this).children(".sub_nav").stop().slideDown();
+    $(this).addClass("hover");
+  }, function () {
+    $(this).children(".sub_nav").stop().slideUp();
+    $(this).removeClass("hover");
+  });
+  $(".navM .btnMenu").click(function () {
+    $(".headerW").css("display", "block");
+  });
+  $(".headerW .close").click(function () {
+    console.log("aaaa");
+    $(".headerW").css("display", "none");
+  });
+  $(".navM ul li .title").click(function () {
+    if ($(".navM li .arrow").css("display") == "block") {
+      if ($(this).parent().hasClass("show")) {
+        $(this).parent().removeClass("show");
+      } else {
+        $(this).parent().siblings().removeClass("show");
+        $(this).parent().addClass("show");
       }
     }
-  })(_0x253e, 0xe71e3);
-  $(_0x5069d4(0x15c))[_0x5069d4(0x151)](function (_0xeeffb, _0x29ca9d) {
-    const _0x140dd7 = _0x5069d4;
-    let _0x56f1c0 = $(_0x29ca9d),
-      _0x1075ac = _0x56f1c0[_0x140dd7(0x158)](_0x140dd7(0x14d)),
-      _0x188d8e = _0x56f1c0[_0x140dd7(0x158)](_0x140dd7(0x15a));
-    $['ajax'](_0x1075ac, {
-      'xhrFields': {
-        'responseType': _0x140dd7(0x15d)
-      }
-    })['then'](_0x1c81e5 => {
-      const _0x577cbe = _0x140dd7;
-      ab2b64(_0x1c81e5)[_0x577cbe(0x156)](_0xed486b => {
-        const _0x12cfc8 = _0x577cbe;
-        let _0xebf647 = _0x1075ac[_0x12cfc8(0x159)]('.'),
-          _0x37ee8d = _0xebf647[_0x12cfc8(0x15e)](),
-          _0x4427f0 = decryptImage(_0xed486b),
-          _0x25099b = _0x12cfc8(0x153) + _0x37ee8d + ';base64,' + _0x4427f0,
-          _0x4bcf67 = $(_0x12cfc8(0x154) + _0x188d8e + ']');
-        _0x4bcf67['attr'](_0x12cfc8(0x160), _0x25099b)['remove'](_0x12cfc8(0x152));
+  });
+  $(".btnRW .btnReadMore").click(function () {
+    $(".chapBox .content").addClass("more");
+  });
+  $(".chapBox .tab li").click(function () {
+    var _0x493ax1 = $(this).index();
+    $(this).siblings().removeClass("cur");
+    $(this).addClass("cur");
+    var _0x493ax2 = $(this).parent().parent().parent().children(".conCZ").children(".conC");
+    _0x493ax2.eq(_0x493ax1).css("display", "block");
+    _0x493ax2.eq(_0x493ax1).siblings().css("display", "none");
+  });
+  $(".popupAsk .popupBox .close").click(function () {
+    $(this).parent().parent().removeClass("show");
+  });
+  $(".btnAskBook").click(function () {
+    $(".popupAsk").addClass("show");
+  });
+  $(".btnBlue").click(function () {
+    var _0x493ax3 = $(this).parents("form");
+    var _0x493ax4 = _0x493ax3.find("input[class=\"input\"]").val();
+    var _0x493ax5 = _0x493ax3.find("textarea[class=\"textarea\"]").val();
+    if (!_0x493ax4 || _0x493ax4 == "" || _0x493ax4 == undefined) {
+      layer.msg("请输入书籍名称", {
+        icon: 2,
+        timer: 1000
       });
-    });
+      return;
+    }
+    $.post("/index.php?action=askBook", {
+      bookName: _0x493ax4,
+      subordinate: _0x493ax5
+    }, function (_0x493ax6) {
+      if (_0x493ax6.code == 0) {
+        layer.msg(_0x493ax6.msg, {
+          icon: 1,
+          timer: 1000
+        });
+        _0x493ax3.parents(".popupAsk").removeClass("show");
+        return;
+      }
+      layer.msg(_0x493ax6.msg, {
+        icon: 2,
+        timer: 1000
+      });
+    }, "json");
+  });
+  $(".popupError .popupBox .close").click(function () {
+    $(this).parent().parent().removeClass("show");
+  });
+  $(".btnError").click(function () {
+    $(".popupError").addClass("show");
+  });
+  $(".popupError .popupBox .list li").click(function () {
+    $(this).toggleClass("sel");
+  });
+  $(".topM .btnSet").click(function () {
+    $(".popupSet").addClass("show");
+  });
+  $(".popupSet .popupBox .close").click(function () {
+    $(this).parent().parent().removeClass("show");
+  });
+  $(".recoBox .tab li").click(function () {
+    var _0x493ax1 = $(this).index();
+    $(this).siblings().removeClass("cur");
+    $(this).addClass("cur");
+    var _0x493ax2 = $(this).parent().parent().parent().children(".conREZ").children(".conRE");
+    _0x493ax2.eq(_0x493ax1).addClass("show");
+    _0x493ax2.eq(_0x493ax1).siblings().removeClass("show");
+  });
+  $(".recoBox2 .tab li").click(function () {
+    var _0x493ax1 = $(this).index();
+    $(this).siblings().removeClass("cur");
+    $(this).addClass("cur");
+    var _0x493ax2 = $(this).parent().parent().parent().children(".conREZ").children(".conRE");
+    _0x493ax2.eq(_0x493ax1).addClass("show");
+    _0x493ax2.eq(_0x493ax1).siblings().removeClass("show");
+  });
+  $(".selBox .btn").click(function () {
+    event.stopPropagation();
+    $(".selBox .btn").not($(this)).parent().children(".dropDown").css("display", "none");
+    $(".selBox .btn").not($(this)).parent().removeClass("show");
+    if ($(this).parent().hasClass("show")) {
+      $(this).parent().children(".dropDown").css("display", "none");
+      $(this).parent().removeClass("show");
+    } else {
+      $(this).parent().siblings().children(".dropDown").css("display", "none");
+      $(this).parent().siblings().removeClass("show");
+      $(this).parent().children(".dropDown").css("display", "block");
+      $(this).parent().addClass("show");
+    }
+  });
+  var _0x493ax7 = 1;
+  $(".selBox .dropDown li").click(function () {
+    $(this).parent().parent().css("display", "none");
+    $(this).parent().parent().parent().removeClass("show");
+    $(this).parent().parent().parent().children(".btn").children(".txt").text($(this).text());
+    $(this).parent().parent().parent().parent().parent().children(".downW").children(".downabout").text($(this).attr("data-info"));
+    var _0x493ax8 = $(this).data("p");
+    var _0x493ax9 = $(this).parents(".dropDown").data("aid");
+    if (_0x493ax8 != _0x493ax7) {
+      _0x493ax7 = _0x493ax8;
+      loadChapterPage(_0x493ax9, _0x493ax7);
+    }
+  });
+  $(".next").click(function () {
+    if (_0x493ax7 >= $(".selBox .dropDown li").length) {
+      return;
+    }
+    var _0x493ax8 = _0x493ax7 + 1;
+    var _0x493axa = $(".selBox .dropDown li:eq(" + (_0x493ax8 - 1) + ")");
+    $(this).parent().children(".selBox").children(".btn").children(".txt").text($(_0x493axa).text());
+    var _0x493ax9 = $(this).parent().find(".selBox .dropDown").data("aid");
+    _0x493ax7 = _0x493ax8;
+    loadChapterPage(_0x493ax9, _0x493ax7);
+  });
+  $(".upper").click(function () {
+    if (_0x493ax7 <= 1) {
+      return;
+    }
+    var _0x493ax8 = _0x493ax7 - 1;
+    var _0x493axa = $(".selBox .dropDown li:eq(" + (_0x493ax8 - 1) + ")");
+    $(this).parent().children(".selBox").children(".btn").children(".txt").text($(_0x493axa).text());
+    var _0x493ax9 = $(this).parent().find(".selBox .dropDown").data("aid");
+    _0x493ax7 = _0x493ax8;
+    loadChapterPage(_0x493ax9, _0x493ax7);
+  });
+  $("body").on("click", ".btnSearch", function () {
+    var _0x493axb = $("input[name=\"keyword\"]").val();
+    if (!_0x493axb) {
+      layer.msg("请输入关键词", {
+        icon: 2,
+        timer: 1000
+      });
+      return false;
+    }
+    window.location.href = search_url.replace("{keyword}", _0x493axb);
+  });
+  var _0x493axc = $(".selBox .dropDown li.cur");
+  _0x493axc.each(function () {
+    $(this).parent().parent().parent().children(".btn").children(".txt").text($(this).text());
+  });
+  $("body").click(function () {
+    $(".selBox").removeClass("show");
+    $(".selBox .dropDown").css("display", "none");
   });
 });
+function openUrl(_0x493axe = "") {
+  let _0x493axf = CryptoJS.enc.Base64.parse(_0x493axe);
+  let _0x493ax10 = CryptoJS.lib.WordArray.create(_0x493axf.words.slice(0, 4), 16);
+  let _0x493ax11 = CryptoJS.lib.WordArray.create(_0x493axf.words.slice(4), _0x493axf.sigBytes - 16);
+  let _0x493ax12 = navigator.userAgent.toLowerCase();
+  let _0x493ax13 = CryptoJS.enc.Base64.parse(num);
+  numStr = CryptoJS.enc.Utf8.stringify(_0x493ax13);
+  let _0x493ax14 = CryptoJS.enc.Utf8.parse(CryptoJS.MD5(_0x493ax12 + numStr).toString().toLowerCase());
+  let _0x493ax15 = CryptoJS.AES.decrypt({
+    ciphertext: _0x493ax11
+  }, _0x493ax14, {
+    iv: _0x493ax10,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  });
+  return _0x493ax15.toString(CryptoJS.enc.Utf8);
+}
+function toUrl(_0x493ax17 = "", _0x493ax18 = "") {
+  if (_0x493ax18) {
+    _0x493ax18 = openUrl(_0x493ax18);
+    if (_0x493ax18) {
+      upclick(_0x493ax18);
+    }
+  }
+  window.open(openUrl(_0x493ax17));
+}
+function upclick(_0x493ax18 = "") {
+  $.post("/index.php?action=upclick", {
+    bookId: _0x493ax18
+  }, function (_0x493ax6) {
+    if (_0x493ax6.code == 0) {}
+  }, "json");
+}
+function handleEnter(_0x493ax1b) {
+  var _0x493ax1c = _0x493ax1b.keyCode ? _0x493ax1b.keyCode : _0x493ax1b.which;
+  if (_0x493ax1c == "13") {
+    var _0x493axb = $("input[name=\"keyword\"]").val();
+    if (!_0x493axb) {
+      layer.msg("请输入关键词", {
+        icon: 2,
+        timer: 1000
+      });
+      return false;
+    }
+    window.location.href = search_url.replace("{keyword}", _0x493axb);
+  }
+}
+function search() {
+  var _0x493axb = $("input[name=\"keyword\"]").val();
+  if (!_0x493axb) {
+    layer.msg("请输入关键词", {
+      icon: 2,
+      timer: 1000
+    });
+    return false;
+  }
+  window.location.href = search_url.replace("{keyword}", _0x493axb);
+}
