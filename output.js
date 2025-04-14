@@ -1,30 +1,47 @@
-//4/14/2025, 7:29:48 PM
+//4/14/2025, 8:04:13 PM
 //Project:https://github.com/dream385/decode
 Object.defineProperty(window, "confirm", {
   "configurable": false,
   "writable": false,
   "value": window.confirm
 });
-const currentHour = new Date().getHours();
-if (isAgeVerified && document.cookie.includes("_ga")) {
+const originalConfirm = window.confirm;
+setInterval(() => {
+  if (window.confirm !== originalConfirm) {
+    console.warn("警告：confirm 函数被篡改");
+  }
+}, 2000);
+const antiDebug = () => {
+  const _0x87fae = performance.now();
+  for (let _0x29981a = 0; _0x29981a < 100000; _0x29981a++) {}
+  if (performance.now() - _0x87fae > 50) console.warn("检测到调试行为");
+};
+setTimeout(antiDebug, Math.random() * 500 + 500);
+const checkCookie = () => {
+  const _0x22ca61 = document.cookie;
+  const _0x580a58 = String.fromCharCode(95) + "ga";
+  const _0x4d6b4e = String.fromCharCode(95, 95) + "itrace" + String.fromCharCode(95);
+  return _0x22ca61.includes(_0x580a58) && !_0x22ca61.includes(_0x4d6b4e);
+};
+if (isAgeVerified && checkCookie()) {
   setTimeout(() => {
     requestAnimationFrame(() => {
       setTimeout(() => {
-        if (currentHour >= 20 || currentHour < 8) {
-          confirm("章节顺序解析中。");
-        }
-        var _0x5c99c1 = $(".BCsectionTwo-top-chapter");
-        var _0x57390c = _0x5c99c1.get().sort((_0x33001e, _0x4fd9a6) => {
-          return originalOrder[_0x5c99c1.index(_0x33001e)] - originalOrder[_0x5c99c1.index(_0x4fd9a6)];
+        var _0x25b08b = $(".BCsectionTwo-top-chapter");
+        var _0x1153a6 = _0x25b08b.get().sort((_0x1e6160, _0x12f1be) => {
+          return originalOrder[_0x25b08b.index(_0x1e6160)] - originalOrder[_0x25b08b.index(_0x12f1be)];
         });
-        var _0xece157 = $(".BCsectionTwo-top");
-        _0xece157.one("touchend click", function () {
-          if (!document.cookie.includes("__itrace_wid")) {
-            _0xece157.empty().append(_0x57390c);
+        var _0x1449d3 = $(".BCsectionTwo-top");
+        _0x1449d3.one("click touchend", function () {
+          if (checkCookie() && isAgeVerified) {
+            _0x1449d3.empty().append(_0x1153a6);
+            _0x1449d3.find("a[data-real]").each(function () {
+              const _0xa1d880 = this.dataset.real;
+              this.textContent = _0xa1d880;
+            });
           }
-          console.log("排序已执行");
         });
-      }, Math.random() * 100 + 500);
+      }, Math.random() * 500 + 500);
     });
   }, Math.random() * 100 + 500);
   console.log("User has agreed to age verification.");
@@ -38,4 +55,4 @@ if (isAgeVerified && document.cookie.includes("_ga")) {
   }, Math.random() * 500 + 500);
   console.log("User has not agreed to age verification.");
 }
-_0xodd = "jsjiami.com.v6";
+_0xod7 = "jsjiami.com.v6";
