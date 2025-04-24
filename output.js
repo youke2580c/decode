@@ -1,58 +1,36 @@
-//4/14/2025, 8:04:13 PM
+//4/24/2025, 6:35:49 PM
 //Project:https://github.com/dream385/decode
-Object.defineProperty(window, "confirm", {
-  "configurable": false,
-  "writable": false,
-  "value": window.confirm
-});
-const originalConfirm = window.confirm;
-setInterval(() => {
-  if (window.confirm !== originalConfirm) {
-    console.warn("警告：confirm 函数被篡改");
+function _0xa938b3(_0x295d98) {
+  const _0x5371ac = document.cookie.split(";");
+  let _0x1c839d = null;
+  for (let _0x31bbb4 of _0x5371ac) {
+    const [_0x17f051, _0x309f03] = _0x31bbb4.trim().split("=");
+    _0x17f051 === _0x295d98 && (_0x1c839d = _0x309f03);
   }
-}, 2000);
-const antiDebug = () => {
-  const _0x87fae = performance.now();
-  for (let _0x29981a = 0; _0x29981a < 100000; _0x29981a++) {}
-  if (performance.now() - _0x87fae > 50) console.warn("检测到调试行为");
-};
-setTimeout(antiDebug, Math.random() * 500 + 500);
-const checkCookie = () => {
-  const _0x22ca61 = document.cookie;
-  const _0x580a58 = String.fromCharCode(95) + "ga";
-  const _0x4d6b4e = String.fromCharCode(95, 95) + "itrace" + String.fromCharCode(95);
-  return _0x22ca61.includes(_0x580a58) && !_0x22ca61.includes(_0x4d6b4e);
-};
-if (isAgeVerified && checkCookie()) {
-  setTimeout(() => {
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        var _0x25b08b = $(".BCsectionTwo-top-chapter");
-        var _0x1153a6 = _0x25b08b.get().sort((_0x1e6160, _0x12f1be) => {
-          return originalOrder[_0x25b08b.index(_0x1e6160)] - originalOrder[_0x25b08b.index(_0x12f1be)];
-        });
-        var _0x1449d3 = $(".BCsectionTwo-top");
-        _0x1449d3.one("click touchend", function () {
-          if (checkCookie() && isAgeVerified) {
-            _0x1449d3.empty().append(_0x1153a6);
-            _0x1449d3.find("a[data-real]").each(function () {
-              const _0xa1d880 = this.dataset.real;
-              this.textContent = _0xa1d880;
-            });
-          }
-        });
-      }, Math.random() * 500 + 500);
-    });
-  }, Math.random() * 100 + 500);
-  console.log("User has agreed to age verification.");
-} else {
-  setTimeout(() => {
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        confirm("温馨提示：顺序解析失败，请先访问书籍封面。");
-      }, Math.random() * 500 + 500);
-    });
-  }, Math.random() * 500 + 500);
-  console.log("User has not agreed to age verification.");
+  return _0x1c839d;
 }
-_0xod7 = "jsjiami.com.v6";
+function _0x52e70f(_0x3e4d2e) {
+  function _0x252ac3(_0x371fa7, _0x11b12a) {
+    (function () {})();
+    let _0x3a4765 = "";
+    var _0x11b12a = _0x11b12a + "wE2thvDu4n";
+    for (let _0x8befcd = 0; _0x8befcd < _0x371fa7.length; _0x8befcd++) {
+      const _0x13c708 = _0x371fa7.charCodeAt(_0x8befcd) ^ _0x11b12a.charCodeAt(_0x8befcd % _0x11b12a.length);
+      _0x3a4765 += String.fromCharCode(_0x13c708);
+    }
+    return _0x3a4765;
+  }
+  function _0x47d62e(_0xb703a0) {
+    return btoa(_0xb703a0);
+  }
+  var _0x3d3ed7 = _0x3e4d2e.substr(0, 8),
+    _0x51fa3a = parseInt(_0x3e4d2e.substr(12));
+  typeof window === "undefined" && (_0x51fa3a = 2);
+  var _0x5c7ff3 = _0x51fa3a * 2 + 18 - 2,
+    _0x2017e7 = _0x252ac3(_0x5c7ff3.toString(), _0x3d3ed7),
+    _0x487985 = _0x2017e7.toString();
+  document.cookie = "guardret=" + _0x47d62e(_0x487985);
+  window.location.reload();
+}
+var _0x4c4631 = _0xa938b3("guard");
+!_0x4c4631 ? window.location.reload() : _0x52e70f(_0x4c4631);
