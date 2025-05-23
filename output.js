@@ -1,79 +1,231 @@
-//5/17/2025, 7:18:48 AM
+//5/23/2025, 6:33:19 PM
 //Project:https://github.com/dream385/decode
-function randomId(_0xe1397d = "id") {
-  return _0xe1397d + "-" + Math.random().toString(36).slice(2, 8);
-}
-const checkCookie = () => {
-  const _0x2da1fa = document.cookie,
-    _0x18bb44 = String.fromCharCode(95) + "ga",
-    _0x605b22 = String.fromCharCode(95, 95) + "it";
-  return _0x2da1fa.includes(_0x18bb44) && !_0x2da1fa.includes(_0x605b22);
-};
-if (isAgeVerified && checkCookie()) {
-  let seconds = Math.floor(Math.random() * 6) + 5;
-  const maskId = randomId("mask"),
-    countdownId = randomId("cd"),
-    unlockId = randomId("unlock"),
-    mask = document.createElement("div");
-  mask.id = maskId;
-  mask.style.cssText = "\n        position: fixed;\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        background: #fff;\n        border-radius: 16px;\n        padding: 24px 32px;\n        max-width: 90vw;\n        text-align: center;\n        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);\n        z-index: 9999;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", sans-serif;\n        animation: fadeIn 0.3s ease;\n    ";
-  const style = document.createElement("style");
-  style.textContent = "\n        @keyframes fadeIn {\n            from { opacity: 0; }\n            to { opacity: 1; }\n        }\n        #" + unlockId + " {\n            margin-top: 20px;\n            padding: 12px 24px;\n            font-size: 16px;\n            background: linear-gradient(to right, #f97316, #ef4444);\n            color: white;\n            border: none;\n            border-radius: 999px;\n            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n            cursor: pointer;\n            transition: all 0.2s ease;\n            white-space: nowrap;\n            min-width: 160px;\n            text-align: center;\n        }\n        #" + unlockId + ":active {\n            transform: scale(0.96);\n            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);\n        }\n    ";
-  document.head.appendChild(style);
-  const countdownText = document.createElement("div");
-  countdownText.style.fontSize = "16px";
-  countdownText.style.color = "#444";
-  countdownText.style.whiteSpace = "nowrap";
-  countdownText.style.textAlign = "center";
-  countdownText.innerHTML = "⏳ 正在解锁章节顺序，请稍等 <span id=\"" + countdownId + "\">" + seconds + "</span> 秒...";
-  mask.appendChild(countdownText);
-  document.body.appendChild(mask);
-  const countdownEl = document.getElementById(countdownId),
-    timer = setInterval(() => {
-      seconds--;
-      countdownEl.textContent = seconds;
-      if (seconds <= 0) {
-        clearInterval(timer);
-        mask.innerHTML = "";
-        const _0x31c9cf = document.createElement("button");
-        _0x31c9cf.id = unlockId;
-        _0x31c9cf.textContent = "🔓 Unlock";
-        mask.appendChild(_0x31c9cf);
-      }
-    }, 1000);
-  document.addEventListener("click", _0x30f906 => {
-    if (_0x30f906.target && _0x30f906.target.id === unlockId) {
-      const _0x28f6d3 = $(".BCsectionTwo-top"),
-        _0xd86b29 = $(".BCsectionTwo-top-chapter"),
-        _0x1db358 = _0xd86b29.get().sort((_0x566e34, _0x2dd664) => {
-          return parseInt(_0x566e34.dataset.x) - parseInt(_0x2dd664.dataset.x);
-        });
-      _0x28f6d3.empty().append(_0x1db358);
-      _0x28f6d3.css({
-        "display": "flex",
-        "flex-direction": "column"
-      });
-      _0x1db358.forEach((_0x462dd2, _0x21710a) => {
-        _0x462dd2.style.order = _0x21710a;
-      });
-      _0x28f6d3.find("a[uc-title]").each(function () {
-        this.textContent = this.getAttribute("uc-title");
-      });
-      _0x28f6d3.find("a[data-sb]").each(function () {
-        const _0x52e42c = atob(this.getAttribute("data-sb"));
-        this.setAttribute("href", "javascript:void(0)");
-        this.addEventListener("click", () => {
-          location.href = _0x52e42c;
-        });
-      });
-      document.getElementById(maskId)?.["remove"]();
-    }
-  }, true);
-  console.log("✅ Age verified, countdown started.");
-} else setTimeout(() => {
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      confirm("温馨提示：顺序解析失败，请先访问书籍封面。");
-    }, Math.random() * 500 + 500);
+$(function () {
+  $(".nav li").hover(function () {
+    $(this).children(".sub_nav").stop().slideDown();
+    $(this).addClass("hover");
+  }, function () {
+    $(this).children(".sub_nav").stop().slideUp();
+    $(this).removeClass("hover");
   });
-}, Math.random() * 500 + 500), console.log("❌ Age verification failed.");
+  $(".navM .btnMenu").click(function () {
+    $(".headerW").css("display", "block");
+  });
+  $(".headerW .close").click(function () {
+    console.log("aaaa");
+    $(".headerW").css("display", "none");
+  });
+  $(".navM ul li .title").click(function () {
+    if ($(".navM li .arrow").css("display") == "block") {
+      if ($(this).parent().hasClass("show")) {
+        $(this).parent().removeClass("show");
+      } else {
+        $(this).parent().siblings().removeClass("show");
+        $(this).parent().addClass("show");
+      }
+    }
+  });
+  $(".btnRW .btnReadMore").click(function () {
+    $(".chapBox .content").addClass("more");
+  });
+  $(".chapBox .tab li").click(function () {
+    var _0x493ax1 = $(this).index();
+    $(this).siblings().removeClass("cur");
+    $(this).addClass("cur");
+    var _0x493ax2 = $(this).parent().parent().parent().children(".conCZ").children(".conC");
+    _0x493ax2.eq(_0x493ax1).css("display", "block");
+    _0x493ax2.eq(_0x493ax1).siblings().css("display", "none");
+  });
+  $(".popupAsk .popupBox .close").click(function () {
+    $(this).parent().parent().removeClass("show");
+  });
+  $(".btnAskBook").click(function () {
+    $(".popupAsk").addClass("show");
+  });
+  $(".btnBlue").click(function () {
+    var _0x493ax3 = $(this).parents("form");
+    var _0x493ax4 = _0x493ax3.find("input[class=\"input\"]").val();
+    var _0x493ax5 = _0x493ax3.find("textarea[class=\"textarea\"]").val();
+    if (!_0x493ax4 || _0x493ax4 == "" || _0x493ax4 == undefined) {
+      layer.msg("请输入书籍名称", {
+        icon: 2,
+        timer: 1000
+      });
+      return;
+    }
+    $.post("/index.php?action=askBook", {
+      bookName: _0x493ax4,
+      subordinate: _0x493ax5
+    }, function (_0x493ax6) {
+      if (_0x493ax6.code == 0) {
+        layer.msg(_0x493ax6.msg, {
+          icon: 1,
+          timer: 1000
+        });
+        _0x493ax3.parents(".popupAsk").removeClass("show");
+        return;
+      }
+      layer.msg(_0x493ax6.msg, {
+        icon: 2,
+        timer: 1000
+      });
+    }, "json");
+  });
+  $(".popupError .popupBox .close").click(function () {
+    $(this).parent().parent().removeClass("show");
+  });
+  $(".btnError").click(function () {
+    $(".popupError").addClass("show");
+  });
+  $(".popupError .popupBox .list li").click(function () {
+    $(this).toggleClass("sel");
+  });
+  $(".topM .btnSet").click(function () {
+    $(".popupSet").addClass("show");
+  });
+  $(".popupSet .popupBox .close").click(function () {
+    $(this).parent().parent().removeClass("show");
+  });
+  $(".recoBox .tab li").click(function () {
+    var _0x493ax1 = $(this).index();
+    $(this).siblings().removeClass("cur");
+    $(this).addClass("cur");
+    var _0x493ax2 = $(this).parent().parent().parent().children(".conREZ").children(".conRE");
+    _0x493ax2.eq(_0x493ax1).addClass("show");
+    _0x493ax2.eq(_0x493ax1).siblings().removeClass("show");
+  });
+  $(".recoBox2 .tab li").click(function () {
+    var _0x493ax1 = $(this).index();
+    $(this).siblings().removeClass("cur");
+    $(this).addClass("cur");
+    var _0x493ax2 = $(this).parent().parent().parent().children(".conREZ").children(".conRE");
+    _0x493ax2.eq(_0x493ax1).addClass("show");
+    _0x493ax2.eq(_0x493ax1).siblings().removeClass("show");
+  });
+  $(".selBox .btn").click(function () {
+    event.stopPropagation();
+    $(".selBox .btn").not($(this)).parent().children(".dropDown").css("display", "none");
+    $(".selBox .btn").not($(this)).parent().removeClass("show");
+    if ($(this).parent().hasClass("show")) {
+      $(this).parent().children(".dropDown").css("display", "none");
+      $(this).parent().removeClass("show");
+    } else {
+      $(this).parent().siblings().children(".dropDown").css("display", "none");
+      $(this).parent().siblings().removeClass("show");
+      $(this).parent().children(".dropDown").css("display", "block");
+      $(this).parent().addClass("show");
+    }
+  });
+  var _0x493ax7 = 1;
+  $(".selBox .dropDown li").click(function () {
+    $(this).parent().parent().css("display", "none");
+    $(this).parent().parent().parent().removeClass("show");
+    $(this).parent().parent().parent().children(".btn").children(".txt").text($(this).text());
+    $(this).parent().parent().parent().parent().parent().children(".downW").children(".downabout").text($(this).attr("data-info"));
+    var _0x493ax8 = $(this).data("p");
+    var _0x493ax9 = $(this).parents(".dropDown").data("aid");
+    if (_0x493ax8 != _0x493ax7) {
+      _0x493ax7 = _0x493ax8;
+      loadChapterPage(_0x493ax9, _0x493ax7);
+    }
+  });
+  $(".next").click(function () {
+    if (_0x493ax7 >= $(".selBox .dropDown li").length) {
+      return;
+    }
+    var _0x493ax8 = _0x493ax7 + 1;
+    var _0x493axa = $(".selBox .dropDown li:eq(" + (_0x493ax8 - 1) + ")");
+    $(this).parent().children(".selBox").children(".btn").children(".txt").text($(_0x493axa).text());
+    var _0x493ax9 = $(this).parent().find(".selBox .dropDown").data("aid");
+    _0x493ax7 = _0x493ax8;
+    loadChapterPage(_0x493ax9, _0x493ax7);
+  });
+  $(".upper").click(function () {
+    if (_0x493ax7 <= 1) {
+      return;
+    }
+    var _0x493ax8 = _0x493ax7 - 1;
+    var _0x493axa = $(".selBox .dropDown li:eq(" + (_0x493ax8 - 1) + ")");
+    $(this).parent().children(".selBox").children(".btn").children(".txt").text($(_0x493axa).text());
+    var _0x493ax9 = $(this).parent().find(".selBox .dropDown").data("aid");
+    _0x493ax7 = _0x493ax8;
+    loadChapterPage(_0x493ax9, _0x493ax7);
+  });
+  $("body").on("click", ".btnSearch", function () {
+    var _0x493axb = $("input[name=\"keyword\"]").val();
+    if (!_0x493axb) {
+      layer.msg("请输入关键词", {
+        icon: 2,
+        timer: 1000
+      });
+      return false;
+    }
+    window.location.href = search_url.replace("{keyword}", _0x493axb);
+  });
+  var _0x493axc = $(".selBox .dropDown li.cur");
+  _0x493axc.each(function () {
+    $(this).parent().parent().parent().children(".btn").children(".txt").text($(this).text());
+  });
+  $("body").click(function () {
+    $(".selBox").removeClass("show");
+    $(".selBox .dropDown").css("display", "none");
+  });
+});
+function openUrl(_0x493axe = "") {
+  let _0x493axf = CryptoJS.enc.Base64.parse(_0x493axe);
+  let _0x493ax10 = CryptoJS.lib.WordArray.create(_0x493axf.words.slice(0, 4), 16);
+  let _0x493ax11 = CryptoJS.lib.WordArray.create(_0x493axf.words.slice(4), _0x493axf.sigBytes - 16);
+  let _0x493ax12 = navigator.userAgent.toLowerCase();
+  let _0x493ax13 = CryptoJS.enc.Base64.parse(num);
+  numStr = CryptoJS.enc.Utf8.stringify(_0x493ax13);
+  let _0x493ax14 = CryptoJS.enc.Utf8.parse(CryptoJS.MD5(_0x493ax12 + numStr).toString().toLowerCase());
+  let _0x493ax15 = CryptoJS.AES.decrypt({
+    ciphertext: _0x493ax11
+  }, _0x493ax14, {
+    iv: _0x493ax10,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  });
+  return _0x493ax15.toString(CryptoJS.enc.Utf8);
+}
+function toUrl(_0x493ax17 = "", _0x493ax18 = "") {
+  if (_0x493ax18) {
+    _0x493ax18 = openUrl(_0x493ax18);
+    if (_0x493ax18) {
+      upclick(_0x493ax18);
+    }
+  }
+  window.open(openUrl(_0x493ax17));
+}
+function upclick(_0x493ax18 = "") {
+  $.post("/index.php?action=upclick", {
+    bookId: _0x493ax18
+  }, function (_0x493ax6) {
+    if (_0x493ax6.code == 0) {}
+  }, "json");
+}
+function handleEnter(_0x493ax1b) {
+  var _0x493ax1c = _0x493ax1b.keyCode ? _0x493ax1b.keyCode : _0x493ax1b.which;
+  if (_0x493ax1c == "13") {
+    var _0x493axb = $("input[name=\"keyword\"]").val();
+    if (!_0x493axb) {
+      layer.msg("请输入关键词", {
+        icon: 2,
+        timer: 1000
+      });
+      return false;
+    }
+    window.location.href = search_url.replace("{keyword}", _0x493axb);
+  }
+}
+function search() {
+  var _0x493axb = $("input[name=\"keyword\"]").val();
+  if (!_0x493axb) {
+    layer.msg("请输入关键词", {
+      icon: 2,
+      timer: 1000
+    });
+    return false;
+  }
+  window.location.href = search_url.replace("{keyword}", _0x493axb);
+}
